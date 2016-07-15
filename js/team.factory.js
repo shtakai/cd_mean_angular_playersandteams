@@ -9,6 +9,12 @@ angular.module('myApp').factory('TeamFactory', function(){
     callback(_teams);
   }
 
+  factory.add = (name, callback) => {
+    console.log('team F add');
+    let _team = new Team(name);
+    _teams.push(_team);
+    callback(_teams);
+  }
 
 
 

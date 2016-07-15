@@ -4,7 +4,7 @@ function Player(name){
 
 function Team(name){
   let _players = [];
-  this.name = name || (chance.city() + chance.domain({tld:'com'}));
+  this.name = name || (chance.city() + ' ' + chance.domain({tld:'com'}));
 
   this.addPlayer = (player) => {
     if(typeof(player) === 'Player'){

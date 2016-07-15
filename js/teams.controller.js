@@ -10,7 +10,13 @@ angular.module('myApp').controller(
       TeamFactory.index( (data) => {
         this.teams = data;
       } );
+    };
 
+    this.add = () => {
+      console.log('team C add');
+      TeamFactory.add( this.teamName, (data) => {
+        this.teams = data;
+      });
     };
 
 
