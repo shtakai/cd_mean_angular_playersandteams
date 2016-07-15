@@ -15,7 +15,7 @@
       <tbody>
         <tr ng-repeat="player in c.players">
           <td>{{ player.name }}</td>
-          <td><button>Remove Player</button>{{ $index }}</td>
+          <td><button ng-click="c.remove($index)">Remove Player</button>{{ $index }}</td>
         </tr>
       </tbody>
     </table>

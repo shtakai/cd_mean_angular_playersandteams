@@ -19,6 +19,12 @@ angular.module('myApp').controller(
         });
       };
 
+      this.remove = ($index) => {
+        PlayerFactory.remove($index, (data) => {
+          this.players = data;
+        });
+      };
+
 
 
     }

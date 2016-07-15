@@ -17,7 +17,12 @@ angular.module('myApp').factory(
        let _player = new Player(name);
        players.push(_player);
        callback(players);
+    }
 
+    factory.remove = ($index, callback) => {
+      console.log('F remove');
+      players.splice($index, 1);
+      callback(players);
     }
 
     return factory;
