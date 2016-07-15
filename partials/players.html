@@ -1,0 +1,27 @@
+<div ng-init="c.index()">
+  <h3>Superstars</h3>
+  <div>
+    Name: <input type="text" ng-model="c.playerName">
+    <button ng-click="c.add()">Add Player</button>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in c.players">
+          <td>{{ player.name }}</td>
+          <td><button>Remove Player</button>{{ $index }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+
