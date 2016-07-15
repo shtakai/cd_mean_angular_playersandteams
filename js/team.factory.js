@@ -16,6 +16,12 @@ angular.module('myApp').factory('TeamFactory', function(){
     callback(_teams);
   }
 
+  factory.remove = ($index, callback) => {
+    console.log('team F remove');
+    _teams.splice($index, 1);
+    callback(_teams);
+  }
+
 
 
 

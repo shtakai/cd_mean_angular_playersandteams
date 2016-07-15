@@ -19,6 +19,13 @@ angular.module('myApp').controller(
       });
     };
 
+    this.remove = ($index) => {
+      console.log('team C remove');
+      TeamFactory.remove( $index, (data) => {
+        this.teams = data;
+      });
+    };
+
 
 
 
