@@ -1,8 +1,15 @@
 <div ng-init="c.index()">
   <h3>Superstars</h3>
   <div>
-    Name: <input type="text" ng-model="c.playerName">
-    <button ng-click="c.add()">Add Player</button>
+    <form name="playerForm">
+      Name:type="text"->text type="email"->email <input type="text" name="name" ng-model="c.playerName" ng-minlength="4" required>
+      <button ng-click="c.add()" ng-disabled="playerForm.$invalid">Add Player</button>
+    </form>
+    <div ng-messages="playerForm.name.$error">
+      <p ng-message="minlength">at least 4 chars</p>
+      <p ng-message="required">required</p>
+      <p ng-message="required">required</p>
+    </div>
   </div>
   <div>
     <table class="table">
