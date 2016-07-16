@@ -1,4 +1,4 @@
-angular.module('myApp',['ngRoute']);
+angular.module('myApp',['ngRoute', 'ngMessages']);
 
 angular.module('myApp').config(($routeProvider) => {
   $routeProvider
