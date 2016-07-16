@@ -17,6 +17,11 @@ angular.module('myApp').config(($routeProvider) => {
       controller: 'AssociationsController',
       controllerAs: 'c',
     })
+    .when('/:teamname', {
+      templateUrl: '../partials/team.html',
+      controller: 'TeamsController',
+      controllerAs: 'c',
+    })
     .otherwise({
       redirectTo: '/players',
     });

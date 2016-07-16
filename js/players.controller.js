@@ -2,10 +2,11 @@
 
 angular.module('myApp').controller(
   'PlayersController',
-  [
-    'PlayerFactory', '$location',
-    function( PlayerFactory, $location ){
+    function( PlayerFactory, $location, $routeParams ){
       console.log('PlayersController start');
+      console.log('routeParams', $routeParams)
+      console.log('location', $location);
+
       this.index = () => {
         console.log('index');
         PlayerFactory.index((data) => {
@@ -24,9 +25,5 @@ angular.module('myApp').controller(
           this.players = data;
         });
       };
-
-
-
     }
-  ]
 )
