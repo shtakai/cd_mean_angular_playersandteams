@@ -21,10 +21,5 @@ angular.module('myApp').factory('TeamFactory', function(){
     _teams.splice($index, 1);
     callback(_teams);
   }
-
-
-
-
-
   return factory;
 })

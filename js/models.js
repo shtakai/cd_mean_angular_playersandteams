@@ -1,26 +1,16 @@
+// NOTE: Player can track team but reverce way can not.
+
 function Player(name){
   this.name = name || chance.name();
+  let _team = null;
+  this.assignTeam = (team) => {
+    if(team instanceof Team || team == null) {
+      _team = team;
+    }
+  };
+  this.getTeam = () => _team;
 }
 
 function Team(name){
-  let _players = [];
   this.name = name || (chance.city() + ' ' + chance.domain({tld:'com'}));
-
-  this.addPlayer = (player) => {
-    if(typeof(player) === 'Player'){
-      _players.push(player);
-    }
-  };
-
-  this.removePlayer = (player) => {
-    if(typeof(player) === 'player'){
-      _.remove(_players, (_player) => {
-        return _player == player;
-      });
-    }
-  };
-
-  this.getPlaters = () => _players;
-
-
 }

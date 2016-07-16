@@ -1,0 +1,35 @@
+<div ng-init="c.index()">
+  <h3>Associations</h3>
+  <div>
+    <form name="assignForm" ng-submit="c.assignTeam(_player, _team)">
+
+      <select ng-model="_player" ng-options="player.name for player in c.players" required>
+        <option value="">Select Superstar</option>
+      </select>
+      <select ng-model="_team" ng-options="team.name for team in c.teams" required>
+        <option value="">Select Squad</option>
+      </select>
+      <button ng-disabled="assignForm.$dirty && assignForm.$invalid">Assign Superstar to Squad</button>
+
+    </form>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Superstar</th>
+          <th>Squad</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in c.players">
+          <td>{{ player.name }}</td>
+          <td>{{ player.getTeam().name }}</td>
+          <td><button ng-show="player.getTeam()" ng-click="c.clearAssignment(player)">Clear Assignment</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

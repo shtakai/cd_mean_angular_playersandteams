@@ -25,6 +25,15 @@ angular.module('myApp').factory(
       callback(players);
     }
 
+    factory.assignTeam = (_player, _team, callback) => {
+      console.log('player F assignTeam');
+      _player = _.find(players, (_p) => {
+        return _p === _player;
+      })
+      _player.assignTeam(_team);
+      callback(players);
+    }
+
     return factory;
 
 
