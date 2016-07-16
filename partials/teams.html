@@ -13,8 +13,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="team in c.teams">
-          <td>{{ team.name }}</td>
+        <tr ng-repeat="team in c.teams track by $index">
+          <td><a href="#/{{ team.name }}" ng-bind="team.name"></a></td>
           <td><button ng-click="c.remove($index)">Remove Team</button></td>
         </tr>
       </tbody>

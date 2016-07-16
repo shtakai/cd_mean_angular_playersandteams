@@ -1,7 +1,6 @@
 // AssociationsController
 
 angular.module('myApp').controller('AssociationsController',
-  ['PlayerFactory', 'TeamFactory', '$location',
     function(PlayerFactory, TeamFactory, $location){
       console.log('AssociationsController start');
 
@@ -31,4 +30,4 @@ angular.module('myApp').controller('AssociationsController',
         });
       };
 
-    }]);
+    });

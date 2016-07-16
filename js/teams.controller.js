@@ -1,9 +1,10 @@
 // TeemsController
 
 angular.module('myApp').controller(
-  'TeamsController',
-  ['TeamFactory', '$location', function(TeamFactory, $location){
+  'TeamsController', function(TeamFactory, $location, $routeParams){
     console.log('TeamsController start');
+    console.log('routeparams', $routeParams);
+    console.log('location', $location);
 
     this.index = () => {
       console.log('team C index');
@@ -26,8 +27,5 @@ angular.module('myApp').controller(
       });
     };
 
-
-
-
-  }]
+  }
 )
